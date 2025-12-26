@@ -70,6 +70,7 @@ ul li {
 }
 
 ul li::before {
+    content: '▶';
     position: absolute;
     left: 10px;
     color: var(--gb-accent);
@@ -205,6 +206,18 @@ button:active, input[type="submit"]:active {
     transform: scale(0.95);
 }
 
+button:disabled, input[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:disabled:hover, input[type="submit"]:disabled:hover {
+    background-color: var(--gb-darkest);
+    color: var(--gb-lightest);
+    border-color: var(--gb-dark);
+}
+
 /* Formularios */
 .form-group {
     margin-bottom: 20px;
@@ -235,9 +248,36 @@ textarea:focus {
     box-shadow: 0 0 10px var(--gb-accent);
 }
 
+input:disabled,
+textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+/* Mensaje de estado del formulario */
+.submit-message {
+    padding: 15px;
+    margin: 15px 0;
+    border: 3px solid;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.submit-message--success {
+    background-color: var(--gb-accent);
+    color: var(--gb-darkest);
+    border-color: var(--gb-darkest);
+}
+
+.submit-message--error {
+    background-color: #d32f2f;
+    color: var(--gb-lightest);
+    border-color: var(--gb-darkest);
 }
 
 /* Experiencia y Proyectos */
@@ -274,51 +314,6 @@ strong {
 .tech-logos-container .logoloop__item:hover img {
     filter: grayscale(0%);
     transform: scale(1.1);
-}
-
-/* Botón de scroll to top - estilo 8-bit */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--gb-darkest);
-    border: 4px solid var(--gb-accent);
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.3s ease-in;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.arrow-icon {
-    width: 100%;
-    height: 100%;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    object-fit: contain;
-    filter: invert(1);
-}
-
-.scroll-to-top:hover {
-    background-color: var(--gb-accent);
-    transform: translateY(-5px);
-    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.3);
-}
-
-.scroll-to-top:hover .arrow-icon {
-    filter: invert(0);
-}
-
-.scroll-to-top:active {
-    transform: translateY(-3px) scale(0.95);
-    box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive */
