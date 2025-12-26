@@ -70,7 +70,6 @@ ul li {
 }
 
 ul li::before {
-    content: '▶';
     position: absolute;
     left: 10px;
     color: var(--gb-accent);
