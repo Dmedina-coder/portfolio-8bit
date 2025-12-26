@@ -13,19 +13,10 @@ RUN npm ci --legacy-peer-deps
 COPY . .
 
 # Build de la aplicación
-RUN npm run build
-
-# Etapa 2: Producción con Nginx
-FROM nginx:alpine
-
-# Copiar build al directorio de Nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Copiar configuración personalizada de Nginx (opcional)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN npm start
 
 # Exponer puerto 80
-EXPOSE 80
+EXPOSE 3000
 
 # Comando de inicio
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
