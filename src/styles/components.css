@@ -1,0 +1,361 @@
+body {
+    background-color: #e0e0e0;
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--gb-lightest);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 var(--gb-darkest);
+}
+
+h2 {
+    font-size: 20px;
+    border-bottom: 4px solid var(--gb-darkest);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 14px;
+    color: var(--gb-accent);
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--gb-lightest);
+    margin-bottom: 15px;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+section {
+    background-color: var(--gb-light);
+    border: 6px solid var(--gb-darkest);
+    padding: 30px;
+    margin: 20px;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px dashed var(--gb-darkest);
+    pointer-events: none;
+}
+
+ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+ul li {
+    background-color: var(--gb-dark);
+    color: var(--gb-lightest);
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 3px solid var(--gb-darkest);
+    position: relative;
+    padding-left: 30px;
+    transition: all 0.3s ease;
+}
+
+ul li::before {
+    position: absolute;
+    left: 10px;
+    color: var(--gb-accent);
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background-color: var(--gb-accent);
+    color: var(--gb-darkest);
+    transform: translateX(5px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+ul li:hover::before {
+    color: var(--gb-darkest);
+    transform: translateX(3px);
+}
+
+/* Grid de habilidades en dos columnas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-grid li:hover {
+    transform: scale(1.05);
+}
+
+/* Eliminar flecha de los items del LogoLoop */
+.tech-logos-container ul li {
+    padding-left: 15px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 0;
+}
+
+.tech-logos-container ul li::before {
+    content: none;
+}
+
+.tech-logos-container ul li:hover {
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links li {
+    background-color: var(--gb-darkest);
+    padding: 15px 20px;
+    padding-left: 15px;
+    flex: 0 1 auto;
+}
+
+.social-links li::before {
+    content: none;
+}
+
+.social-links li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gb-lightest);
+    text-decoration: none;
+    border: none;
+}
+
+.social-links li a img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    image-rendering: auto;
+    transition: all 0.3s ease;
+}
+
+.social-links li:hover {
+    background-color: var(--gb-accent);
+    transform: translateY(-5px);
+}
+
+.social-links li:hover a {
+    color: var(--gb-darkest);
+}
+
+.social-links li:hover a img {
+    filter: brightness(0);
+    transform: scale(1.1);
+}
+
+a {
+    color: var(--gb-accent);
+    text-decoration: none;
+    border-bottom: 2px dotted var(--gb-accent);
+    transition: all 0.3s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+a:hover {
+    color: var(--gb-lightest);
+    border-bottom-color: var(--gb-lightest);
+}
+
+button, input[type="submit"] {
+    background-color: var(--gb-darkest);
+    color: var(--gb-lightest);
+    border: 4px solid var(--gb-dark);
+    padding: 12px 24px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--gb-accent);
+    color: var(--gb-darkest);
+    border-color: var(--gb-lightest);
+    transform: scale(1.05);
+}
+
+button:active, input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--gb-lightest);
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    background-color: var(--gb-darkest);
+    color: var(--gb-accent);
+    border: 3px solid var(--gb-dark);
+    padding: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--gb-accent);
+    box-shadow: 0 0 10px var(--gb-accent);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Experiencia y Proyectos */
+.experience ul li,
+.projects ul li {
+    background-color: var(--gb-dark);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+strong {
+    color: var(--gb-accent);
+}
+
+/* Contenedor de logos tecnológicos */
+.tech-logos-container {
+    margin: 10px 0 20px;
+    padding: 15px 0;
+    background-color: var(--gb-light);
+    border: 0px solid var(--gb-darkest);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Estilos personalizados para LogoLoop */
+.tech-logos-container .logoloop__item img {
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+    image-rendering: auto;
+}
+
+.tech-logos-container .logoloop__item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Botón de scroll to top - estilo 8-bit */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--gb-darkest);
+    border: 4px solid var(--gb-accent);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.arrow-icon {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--gb-accent);
+    transform: translateY(-5px);
+    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover .arrow-icon {
+    filter: invert(0);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-3px) scale(0.95);
+    box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    nav ul {
+        width: 100%;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-logos-container {
+        padding: 10px 0;
+        margin: 5px 0 15px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links li {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .social-links li a {
+        justify-content: center;
+    }
+}

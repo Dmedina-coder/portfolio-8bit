@@ -1,0 +1,196 @@
+/* Paleta de colores Game Boy */
+:root {
+    --gb-lightest: #e0d8a7;
+    --gb-light: #5a7942;
+    --gb-dark: #3e6030;
+    --gb-darkest: #1a1c1e;
+    --gb-accent: #8bac0f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gb-lightest);
+    color: var(--gb-darkest);
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+    font-size: 12px;
+}
+
+/* Importar fuente retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Contenedor principal que ocupa toda la pantalla */
+.home-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px 0px 30px;
+    background-color: var(--gb-light);
+    border: 8px solid var(--gb-darkest);
+    position: relative;
+}
+
+/* Sombra superpuesta que cubre el borde del componente */
+.home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.home h1 {
+    color: var(--gb-lightest);
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 0;
+    text-shadow: 3px 3px 0 var(--gb-darkest);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.8; }
+}
+
+.home p {
+    color: var(--gb-lightest);
+    text-align: center;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav li {
+    background-color: var(--gb-darkest);
+    border: 4px solid var(--gb-dark);
+    padding: 15px 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+nav li:hover {
+    background-color: var(--gb-accent);
+    border-color: var(--gb-lightest);
+    transform: translateY(-5px);
+}
+
+nav li:active {
+    transform: translateY(-5px) scale(0.95);
+}
+
+nav li span {
+    color: var(--gb-lightest);
+    display: block;
+    text-align: center;
+}
+
+nav li:hover span {
+    color: var(--gb-darkest);
+}
+
+/* Estilo especial para el botón de CV */
+nav li:last-child {
+    background-color: var(--gb-accent);
+    border: 4px solid var(--gb-darkest);
+    animation: pulse 2s infinite;
+}
+
+nav li:last-child span {
+    color: var(--gb-darkest);
+}
+
+nav li:last-child:hover {
+    background-color: var(--gb-lightest);
+    border-color: var(--gb-accent);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav li:last-child:hover span {
+    color: var(--gb-darkest);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(139, 172, 15, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(139, 172, 15, 0);
+    }
+}
+
+/* Animación de scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-wrapper {
+        padding: 15px;
+    }
+    
+    .home {
+        padding: 30px 20px 0px 20px;
+    }
+    
+    .home h1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .home p {
+        margin-bottom: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    nav li {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}

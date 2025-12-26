@@ -1,0 +1,154 @@
+/* Animación de personaje 8-bit */
+.character-scene {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #5a7942 0%, #E0F6FF 100%);
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo animado - capa más lejana del parallax */
+.scene-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    z-index: 0;
+}
+
+.background-tile {
+    height: 100%;
+    width: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    opacity: 0.4;
+}
+
+/* Nubes */
+.clouds {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 80px;
+    display: flex;
+    gap: 100px;
+    z-index: 1;
+}
+
+.cloud {
+    height: 60px;
+    width: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    opacity: 0.6;
+}
+
+/* Elementos del escenario (árboles) */
+.scenery {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    height: 110px;
+    display: flex;
+    gap: 150px;
+    z-index: 2;
+}
+
+.tree {
+    height: 120px;
+    width: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Personaje */
+.character {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 3;
+}
+
+.character-sprite {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.sprite-1 {
+    animation: walk-sprite-1 0.6s steps(1) infinite;
+}
+
+.sprite-2 {
+    animation: walk-sprite-2 0.6s steps(1) infinite;
+}
+
+@keyframes walk-sprite-1 {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes walk-sprite-2 {
+    0%, 49% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+/* Suelo */
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    z-index: 4;
+}
+
+.ground-tile {
+    height: 100%;
+    width: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .character-scene {
+        height: 300px;
+    }
+    
+    .character {
+        width: 60px;
+        height: 60px;
+        bottom: 70px;
+    }
+    
+    .tree {
+        height: 90px;
+    }
+    
+    .scenery {
+        bottom: 60px;
+        gap: 100px;
+    }
+    
+    .clouds {
+        gap: 60px;
+    }
+    
+    .cloud {
+        height: 40px;
+    }
+}
