@@ -10,8 +10,8 @@ const Projects = () => {
         },
         {
             title: 'Spotifice',
-            description: 'Una aplicación que replica el funcionamiento básico de Spotify, permitiendo la gestión de renderizado y servidores de música de manera distribuida utilizarndo para ello Python y Flask en el backend y React en el frontend y ZeroC Ice para la comunicación entre servicios.',
-            link: 'https://github.com/ssdd-classroom/2526-Dmedina-coder'
+            description: 'Una aplicación que replica el funcionamiento básico de Spotify, permitiendo la gestión de renderizado y servidores de música de manera distribuida utilizarndo para ello Python y ZeroC Ice para la comunicación entre servicios.',
+            link: 'https://github.com/Dmedina-coder/IceGrid_Spotifice'
         },
         {
             title: 'GameKey Hunter 2.0',

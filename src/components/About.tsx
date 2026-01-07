@@ -1,20 +1,31 @@
 import React from 'react';
 import '../styles/components.css';
 import { LogoLoop } from './LogoLoop';
+import reactLogo from '../assets/icons/react.svg';
+import nodejsLogo from '../assets/icons/nodejs.svg';
+import pythonLogo from '../assets/icons/python.svg';
+import javaLogo from '../assets/icons/java.svg';
+import angularLogo from '../assets/icons/angular.svg';
+import gitLogo from '../assets/icons/git.svg';
+import dockerLogo from '../assets/icons/docker.svg';
+import vmwareLogo from '../assets/icons/vmware.svg';
+import arubaLogo from '../assets/icons/aruba.svg';
+import mysqlLogo from '../assets/icons/mysql.svg';
+import githubLogo from '../assets/icons/github.svg';
 
 const About: React.FC = () => {
     const techLogos = [
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', alt: 'React' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', alt: 'Node.js' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', alt: 'Python' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', alt: 'Java' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg', alt: 'Angular' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', alt: 'Git' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', alt: 'Docker' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vmware_workstation_16_icon.svg', alt: 'VMware' },
-        { src: 'https://www.svgrepo.com/download/354803/aruba.svg', alt: 'Aruba Networks' },
-        { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', alt: 'MySQL' },
-        { src: 'https://www.svgrepo.com/download/512317/github-142.svg', alt: 'GitHub' },
+        { src: reactLogo, alt: 'React' },
+        { src: nodejsLogo, alt: 'Node.js' },
+        { src: pythonLogo, alt: 'Python' },
+        { src: javaLogo, alt: 'Java' },
+        { src: angularLogo, alt: 'Angular' },
+        { src: gitLogo, alt: 'Git' },
+        { src: dockerLogo, alt: 'Docker' },
+        { src: vmwareLogo, alt: 'VMware' },
+        { src: arubaLogo, alt: 'Aruba Networks' },
+        { src: mysqlLogo, alt: 'MySQL' },
+        { src: githubLogo, alt: 'GitHub' },
     ];
 
     return (
